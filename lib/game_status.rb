@@ -17,33 +17,21 @@ WIN_COMBINATIONS = [
   [2,4,6],
   [0,4,8]
 ]
-# check_win: check to see if a particular player won tic-tac-toe
-# => board - current board state
-# => token - symbol of the player to check
-# <= win - a winning combination if that player won
-# <= nil - if that player did not win
-def check_win(board, token)
-  indices = (0..board.size-1).select{|i| board[i] == token}
+
+# won?: check to see for a winning combinations
+# => board - current board states
+# <=  win - a winning combination if a player won
+# <= nil - if the board does not contain a winning combination
+def won?(board)
+  # select the indices containing X
+  x_indices = (0..board.size-1).select{|i| board[i] == 'X'}
   WIN_COMBINATIONS.each do |win|
-    if win.to_set.subset?(indices.to_set)
+    if win.to_set.subset?(x_indices.to_set)
       return win
     end
   end
-  return nil
-end
 
-# won: check to see for a winning combinations
-# => board - current board states
-# <=  win - a combination of winning indices
-# <= nil - if the board does not contain a winning combination
-def won(board)
-  # select the indices containing X
-  win_x = check_win(board,"X")
-  if(win_x != nil)
-    return win_x
-  end
-  win_o = check_win(board,"O")
-  return win_o
+  return nil
 end
 
 # full?: Check to see if the board is full
