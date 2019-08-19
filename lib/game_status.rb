@@ -71,5 +71,5 @@ end
 # <= true - a winner has been found or a draw has occurred
 # <= false - the game is not over
 def over?(board)
-  return draw?(board) || win?(board) != nil
+  return win?(board) != nil || draw?(board)
 end
