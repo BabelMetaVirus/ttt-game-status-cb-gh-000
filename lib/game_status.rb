@@ -28,8 +28,8 @@ def won(board)
   o_indices = (0..board.size-1).select{|i| board[i] == 'O'}.to_set
 
   WIN_COMBINATIONS.each do |win|
-    if  win.to_set.subset?(x_indices.to_set) ||
-        win.to_set.subset?(o_indices.to_set)
+    if  win.to_set.subset?(x_indices) ||
+        win.to_set.subset?(o_indices)
       return win
     end
   end
