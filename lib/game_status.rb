@@ -65,3 +65,11 @@ end
 # <= nil - if there is no winner
 def winner?(board)
 end
+
+# over?: determine if a game is over
+# => board - current board state
+# <= true - a winner has been found or a draw has occurred
+# <= false - the game is not over
+def over?(board)
+  return draw?(board) || win?(board) != nil
+end
