@@ -24,12 +24,12 @@ WIN_COMBINATIONS = [
 # <= False - if the board does not contain a winning combination
 def won?(board)
   # select the indices containing X
-  x_indices = (0..board.size-1).select{|i| board|i| == 'X'}
-  WIN_COMBINATIONS.each do |win|
-    if win.to_set.subset?(x_indices.to_set)
-      return true
-    end
-  end
+  x_indices = (0..board.size-1).select{ |i| board|i| == 'X'}
+  #WIN_COMBINATIONS.each do |win|
+  #  if win.to_set.subset?(x_indices.to_set)
+  #    return true
+  #  end
+#  end
 
   return false
 end
