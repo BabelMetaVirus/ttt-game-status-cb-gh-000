@@ -75,11 +75,5 @@ end
 # <= "O" - if O is the winner
 # <= nil - if there is no winner
 def winner?(board)
-  if(over?(board))
-    win_combo = won?(board)
-    if(win_combo != nil)
-      return board[win_combo[0]]
-    end
-  end
   return nil
 end
