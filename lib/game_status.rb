@@ -54,6 +54,7 @@ def draw?(board)
   end
   if(won(board) != nil)
     return false
+  end
   return true
 end
 
