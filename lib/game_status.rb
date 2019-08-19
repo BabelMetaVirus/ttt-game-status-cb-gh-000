@@ -30,7 +30,7 @@ def won?(board)
       return true
     end
   end
-  
+
   return false
 end
 
