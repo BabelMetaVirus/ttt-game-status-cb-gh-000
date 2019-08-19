@@ -41,6 +41,7 @@ def won(board)
   win_x = check_win(board,"X")
   if(win_x != nil)
     return win_x
+  end
   win_o = check_win(board,"O")
     return win_o
 end
