@@ -22,7 +22,7 @@ WIN_COMBINATIONS = [
 # => board - current board states
 # <= win - the winning combination
 # <= nil - if there is no winning combination
-def won?(board)
+def won(board)
   # select the indices containing X
   x_indices = (0..board.size-1).select{|i| board[i] == 'X'}
   o_indices = (0..board.size-1).select{|i| board[i] == 'O'}
