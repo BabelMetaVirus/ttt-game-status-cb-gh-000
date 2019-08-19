@@ -48,7 +48,7 @@ end
 # <= true - if the board is full and contains no winning combinations
 # <= false - if the board is not full or contains a winning combination
 def draw?(board)
-
+  return win(board) == nil && full?(board)
 end
 
 # winner?: determine if there is a winner and who that winner is
