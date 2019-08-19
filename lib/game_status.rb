@@ -43,7 +43,7 @@ def won(board)
     return win_x
   end
   win_o = check_win(board,"O")
-    return win_o
+  return win_o
 end
 
 # full?: Check to see if the board is full
