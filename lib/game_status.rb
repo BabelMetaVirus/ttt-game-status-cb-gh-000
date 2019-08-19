@@ -17,3 +17,35 @@ WIN_COMBINATIONS = [
   [2,4,6],
   [0,4,8]
 ]
+
+# won?: check to see for a winning combinations
+# => board - current board states
+# <= True - if the board contains a winning combination
+# <= False - if the board does not contain a winning combination
+def won?(board)
+
+end
+
+# full?: Check to see if the board is full
+# => board - current board state
+# <= true - if the board is full
+# <= false - if there are still places to place a move
+def full?(board)
+    return board.all?{|space| space == 'X' || space == 'O'}
+end
+
+# draw?: Check to see if the game is a draw
+# => board - current board state
+# <= true - if the board is full and contains no winning combinations
+# <= false - if the board is not full or contains a winning combination
+def draw?(board)
+
+end
+
+# winner?: determine if there is a winner and who that winner is
+# => board - current board state
+# <= "X" - if X is the winner
+# <= "O" - if O is the winner
+# <= nil - if there is no winner
+def winner?(board)
+end
