@@ -69,11 +69,17 @@ def over?(board)
   return draw?(board)
 end
 
-# winner?: determine if there is a winner and who that winner is
+# winner: determine if there is a winner and who that winner is
 # => board - current board state
 # <= "X" - if X is the winner
 # <= "O" - if O is the winner
 # <= nil - if there is no winner
-def winner?(board)
+def winner(board)
+  if(over?(board))
+    win_combo = won?(board)
+    if(win_combo != nil)
+      return board[win_combo[0]]
+    end
+  end
   return nil
 end
