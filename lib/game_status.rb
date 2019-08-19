@@ -20,8 +20,8 @@ WIN_COMBINATIONS = [
 
 # won?: check to see for a winning combinations
 # => board - current board states
-# <= True - if the board contains a winning combination
-# <= False - if the board does not contain a winning combination
+# <= win - the winning combination
+# <= nil - if there is no winning combination
 def won?(board)
   # select the indices containing X
   x_indices = (0..board.size-1).select{|i| board[i] == 'X'}
@@ -31,7 +31,7 @@ def won?(board)
     end
   end
 
-  return false
+  return nil
 end
 
 # full?: Check to see if the board is full
