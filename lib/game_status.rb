@@ -25,8 +25,9 @@ WIN_COMBINATIONS = [
 def won?(board)
   # select the indices containing X
   x_indices = (0..board.size-1).select{|i| board[i] == 'X'}
+  o_indices = (0..board.size-1).select{|i| board[i] == 'O'}
   WIN_COMBINATIONS.each do |win|
-    if win.to_set.subset?(x_indices.to_set)
+    if win.to_set.subset?(x_indices.to_set) || win.to_set.subset?(o_indices.to_set)
       return win
     end
   end
