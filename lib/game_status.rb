@@ -18,18 +18,16 @@ WIN_COMBINATIONS = [
   [0,4,8]
 ]
 
+
 # won: check to see for a winning combinations
 # => board - current board states
 # <=  win - a winning combination if a player won
 # <= nil - if the board does not contain a winning combination
 def won(board)
   # select the indices containing X
-  x_indices = (0..board.size-1).select{|i| board[i] == 'X'}.to_set
-  o_indices = (0..board.size-1).select{|i| board[i] == 'O'}.to_set
-
+  x_indices = (0..board.size-1).select{|i| board[i] == 'X'}
   WIN_COMBINATIONS.each do |win|
-    if  win.to_set.subset?(x_indices) ||
-        win.to_set.subset?(o_indices)
+    if win.to_set.subset?(x_indices.to_set)
       return win
     end
   end
